@@ -208,6 +208,13 @@ body.hacker-mode .hero {
     box-shadow: 0 6px 20px rgba(37, 99, 235, 0.4);
 }
 
+
+
+
+
+
+
+
 /* --- About Section --- */
 .about-container {
     display: flex;
@@ -455,25 +462,233 @@ body.hacker-mode .stat-box {
 
 
 
+
 /* --- 3. Interactive Quantum Particle Background --- */
-#home {
+#home, #skills, #projects {
     position: relative; 
 }
 
-#particles-js {
+/* Teeno particles ke divs ko ek sath style karna */
+#particles-js, #particles-skills, #particles-projects {
     position: absolute;
     width: 100%;
     height: 100%;
     top: 0;
     left: 0;
     z-index: 0;
+    pointer-events: none; /* IMPORTANT: Isse particles cards ke click/hover ko block nahi karenge */
 }
 
-.hero-content {
+.hero-content, .skills-grid, .projects-grid, .ticker-wrap, .section-title, .section-subtitle {
     position: relative;
-    z-index: 2; /* Text aur buttons ko particles ke aage rakhna */
+    z-index: 2; /* Content ko particles ke aage rakhna */
 }
 
+
+
+
+/* --- 3. Neon Scroll Progress Tracker --- */
+.scroll-progress-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px; /* Bahut hi patli aur premium line */
+    background: transparent;
+    z-index: 10000; /* Sabse aage, Navbar ke bhi upar */
+    pointer-events: none;
+}
+
+.scroll-progress-bar {
+    height: 100%;
+    width: 0%; /* Shuru mein 0% hogi */
+    background: var(--accent-color);
+    /* Neon glowing shadow */
+    box-shadow: 0 0 10px var(--accent-color), 0 0 20px var(--accent-color);
+    transition: width 0.1s ease-out; /* Smooth filling effect */
+}
+
+/* Hacker Mode ke liye Neon Green Glow */
+body.hacker-mode .scroll-progress-bar {
+    background: #00ff00;
+    box-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00, 0 0 30px #00ff00;
+}
+
+
+/* ======================================================
+   --- PREMIUM PROJECTS SECTION (LIGHT THEME) ---
+========================================================= */
+
+.dark-showcase {
+    background-color: var(--bg-light); /* Light grey background matching Skills section */
+    color: var(--text-color);
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+
+.project-header-top {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.sub-heading {
+    color: var(--accent-color); /* Professional Blue */
+    font-family: 'Space Grotesk', 'Poppins', sans-serif;
+    font-size: 0.85rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 15px;
+}
+
+.premium-title {
+    font-size: 3.5rem;
+    color: var(--primary-color); /* Dark Navy text */
+    font-weight: 700;
+}
+
+.highlight-text {
+    color: var(--accent-color); /* Blue Highlight */
+    text-shadow: none; /* Removed neon shadow for clean look */
+}
+
+/* --- Filter Buttons --- */
+.project-filters {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 60px;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    background: transparent;
+    border: 1px solid rgba(0, 0, 0, 0.15); /* Light border */
+    color: var(--text-color);
+    padding: 10px 25px;
+    border-radius: 30px;
+    font-family: inherit;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.filter-btn:hover {
+    border-color: var(--accent-color);
+    color: var(--accent-color);
+}
+
+.filter-btn.active {
+    background: var(--accent-color);
+    color: var(--white);
+    border: none;
+    box-shadow: 0 5px 15px rgba(37, 99, 235, 0.3); /* Soft blue shadow */
+}
+
+/* --- Modern Project Cards Grid (Light Version) --- */
+.modern-projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 40px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.modern-card {
+    background: var(--white); /* White card background */
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    border-radius: 20px;
+    overflow: hidden;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05); /* Clean light shadow */
+}
+
+.modern-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1); /* Slightly deeper shadow on hover */
+    border-color: rgba(0, 0, 0, 0.1);
+}
+
+/* Card Image Area (Top) */
+.card-image-top {
+    height: 220px;
+    background: #e2e8f0; /* Very light grey/blue for the image header */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.card-icon {
+    font-size: 5rem;
+    filter: drop-shadow(0 10px 15px rgba(0,0,0,0.1));
+    transition: transform 0.4s ease;
+}
+
+.modern-card:hover .card-icon {
+    transform: scale(1.1); /* Icon zoom on hover */
+}
+
+/* Card Content Area (Bottom) */
+.card-content {
+    padding: 35px 30px;
+}
+
+/* Major/Minor Tags */
+.project-tag {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--accent-color);
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.project-tag.minor {
+    color: #f43f5e; /* Pink tag for variety */
+}
+
+.modern-card h3 {
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    font-family: 'Space Grotesk', 'Poppins', sans-serif;
+    letter-spacing: 0.5px;
+}
+
+.modern-card p {
+    color: var(--text-color);
+    font-size: 0.95rem;
+    line-height: 1.7;
+    margin-bottom: 25px;
+}
+
+/* Tech Stack Pills */
+.tech-stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.tech-stack span {
+    background: var(--bg-light); /* Light grey pill */
+    color: var(--primary-color);
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+}
+
+.tech-stack span:hover {
+    background: rgba(37, 99, 235, 0.1); /* Light blue tint on hover */
+    color: var(--accent-color);
+    border-color: rgba(37, 99, 235, 0.2);
+}
 
 
 /* --- Mobile Responsive Fixes --- */
@@ -535,3 +750,143 @@ body.hacker-mode .hero h1:hover {
     80% { transform: translate(3px, -3px) }
     100% { transform: translate(0) }
 }
+
+
+
+
+
+
+
+/* --- 1. Magic Trailing Cursor --- */
+/* Default mouse pointer ko chupa dena */
+* {
+    cursor: none !important; 
+}
+
+.cursor-dot {
+    width: 8px;
+    height: 8px;
+    background-color: var(--accent-color); /* Professional Blue */
+    position: fixed;
+    top: 0;
+    left: 0;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    z-index: 9999; /* Sabse aage rakhne ke liye */
+    pointer-events: none; /* Taaki click iske aar-paar ja sake */
+}
+
+.cursor-outline {
+    width: 40px;
+    height: 40px;
+    border: 2px solid var(--accent-color);
+    position: fixed;
+    top: 0;
+    left: 0;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    z-index: 9999;
+    pointer-events: none;
+    transition: width 0.2s, height 0.2s;
+}
+
+/* Jab mouse kisi link ya button par ho (Bada ho jayega) */
+.cursor-outline.hovered {
+    width: 60px;
+    height: 60px;
+    background-color: rgba(37, 99, 235, 0.1); /* Halka blue fill */
+}
+
+/* Hacker Mode ke liye Cursor */
+body.hacker-mode .cursor-dot {
+    background-color: #00ff00;
+}
+body.hacker-mode .cursor-outline {
+    border-color: #00ff00;
+}
+body.hacker-mode .cursor-outline.hovered {
+    background-color: rgba(0, 255, 0, 0.1);
+}
+
+
+
+
+/* ======================================================
+   --- HACKER MODE OVERRIDES FOR PROJECTS SECTION ---
+========================================================= */
+
+/* Section background & border in Hacker Mode */
+body.hacker-mode .dark-showcase {
+    background-color: #000000;
+    border-top: 1px dashed #00ff00;
+    border-bottom: 1px dashed #00ff00;
+}
+
+/* Headings turn neon green */
+body.hacker-mode .sub-heading,
+body.hacker-mode .premium-title,
+body.hacker-mode .highlight-text {
+    color: #00ff00;
+    text-shadow: 0 0 10px rgba(0, 255, 0, 0.7);
+    font-family: 'Courier New', Courier, monospace;
+}
+
+/* Filter buttons get hacker styling */
+body.hacker-mode .filter-btn {
+    color: #00ff00;
+    border-color: #00ff00;
+    font-family: 'Courier New', Courier, monospace;
+    background: transparent;
+}
+
+body.hacker-mode .filter-btn:hover,
+body.hacker-mode .filter-btn.active {
+    background: #00ff00;
+    color: #000000;
+    box-shadow: 0 0 15px #00ff00;
+}
+
+/* Project Cards turn to terminal boxes */
+body.hacker-mode .modern-card {
+    background: #050505;
+    border: 1px solid #00ff00;
+    box-shadow: 0 0 15px rgba(0, 255, 0, 0.1);
+}
+
+body.hacker-mode .modern-card:hover {
+    box-shadow: 0 0 25px rgba(0, 255, 0, 0.5);
+    border-color: #00ff00;
+}
+
+/* Card top area */
+body.hacker-mode .card-image-top {
+    background: #000000;
+    border-bottom: 1px dashed #00ff00;
+}
+
+body.hacker-mode .card-icon {
+    filter: drop-shadow(0 0 15px #00ff00) grayscale(100%) sepia(100%) hue-rotate(80deg);
+}
+
+/* Text inside cards */
+body.hacker-mode .project-tag,
+body.hacker-mode .project-tag.minor,
+body.hacker-mode .modern-card h3,
+body.hacker-mode .modern-card p {
+    color: #00ff00;
+    font-family: 'Courier New', Courier, monospace;
+    text-shadow: none;
+}
+
+/* Tech stack pills */
+body.hacker-mode .tech-stack span {
+    background: transparent;
+    color: #00ff00;
+    border: 1px solid #00ff00;
+}
+
+body.hacker-mode .tech-stack span:hover {
+    background: #00ff00;
+    color: #000000;
+}
+
