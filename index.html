@@ -15,6 +15,15 @@
 </head>
 <body>
 
+    <div class="cursor-dot" data-cursor-dot></div>
+    <div class="cursor-outline" data-cursor-outline></div>
+
+
+    <!-- Neon Scroll Progress Tracker -->
+    <div class="scroll-progress-container">
+        <div class="scroll-progress-bar" id="scroll-progress"></div>
+    </div>
+
     <!-- navbar -->
     <nav class="navbar">
         <div class="logo">RP.</div>
@@ -62,7 +71,7 @@
     <!-- skills  -->
     <section id="skills" class="section bg-light" data-aos="fade-in">
 
-
+        <div id="particles-skills"></div>
         <div class="ticker-wrap">
             <div class="ticker">
                 <div class="ticker-item">PYTHON <span class="up">▲ +14.2%</span></div>
@@ -142,7 +151,8 @@
     </section>
 
     <!-- projects -->
-    <section id="projects" class="section bg-light" data-aos="fade-in">
+    <!-- <section id="projects" class="section bg-light" data-aos="fade-in">
+        <div id="particles-projects"></div>
         <h2 class="section-title" data-aos="fade-up">Featured Full-Stack Projects</h2>
         <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">These projects demonstrate the core technologies I have implemented.</p>
         <div class="projects-grid">
@@ -162,7 +172,108 @@
                 <p>A front-end dashboard that uses intense DOM manipulation for dynamic content updates. Integrated third-party REST APIs for real-time data visualization.</p>
             </div>
         </div>
+    </section> -->
+
+
+
+    <!-- NEW PREMIUM PROJECTS SECTION -->
+    <section id="projects" class="section dark-showcase">
+         <div id="particles-projects"></div>
+
+        <div class="project-header-top" data-aos="fade-up">
+            <span class="sub-heading">04 — WHAT I'VE BUILT</span>
+            <h2 class="premium-title">Featured <span class="highlight-text">Projects</span></h2>
+        </div>
+        
+        <!-- Filter Buttons -->
+        <div class="project-filters" data-aos="fade-up" data-aos-delay="100">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="major">Major Projects</button>
+            <button class="filter-btn" data-filter="minor">Minor Projects</button>
+        </div>
+
+        <div class="modern-projects-grid">
+            
+            <!-- Project 1: Secrets (Major) -->
+            <div class="modern-card" data-category="major" data-aos="fade-up" data-aos-delay="100">
+                <div class="card-image-top">
+                    <span class="card-icon">🔐</span>
+                </div>
+                <div class="card-content">
+                    <div class="project-tag"><span class="tag-icon">★</span> MAJOR PROJECT</div>
+                    <h3>Secrets-Project</h3>
+                    <p>Secure authentication application using local credentials and Google OAuth via .env. Features an EJS frontend utilizing PostgreSQL for the database.</p>
+                    <div class="tech-stack">
+                        <span>Node.js</span><span>Express</span><span>PostgreSQL</span><span>OAuth</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 2: Family Travel Tracker (Major) -->
+            <div class="modern-card" data-category="major" data-aos="fade-up" data-aos-delay="200">
+                <div class="card-image-top">
+                    <span class="card-icon">🌍</span>
+                </div>
+                <div class="card-content">
+                    <div class="project-tag"><span class="tag-icon">★</span> MAJOR PROJECT</div>
+                    <h3>Family-Travel-Tracker</h3>
+                    <p>A travel tracker web app built to track visited countries. Users can switch between multiple profiles and maintain data persistently.</p>
+                    <div class="tech-stack">
+                        <span>Express.js</span><span>PostgreSQL</span><span>EJS</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 3: Blog Capstone (Major) -->
+            <div class="modern-card" data-category="major" data-aos="fade-up" data-aos-delay="300">
+                <div class="card-image-top">
+                    <span class="card-icon">📝</span>
+                </div>
+                <div class="card-content">
+                    <div class="project-tag"><span class="tag-icon">★</span> MAJOR PROJECT</div>
+                    <h3>Blog-Website-Capstone</h3>
+                    <p>A responsive Blog Web App with dynamic routing and server-side rendering. Users can create, edit, view, and delete posts seamlessly.</p>
+                    <div class="tech-stack">
+                        <span>Node.js</span><span>Express</span><span>EJS</span><span>CSS</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 4: Crypto Tracker (Minor) -->
+            <div class="modern-card" data-category="minor" data-aos="fade-up" data-aos-delay="100">
+                <div class="card-image-top">
+                    <span class="card-icon">📈</span>
+                </div>
+                <div class="card-content">
+                    <div class="project-tag minor"><span class="tag-icon">◈</span> MINOR PROJECT</div>
+                    <h3>Crypto-Tracker-Web</h3>
+                    <p>Web application that fetches real-time cryptocurrency data and 7-day market charts from the CoinGecko API using Axios.</p>
+                    <div class="tech-stack">
+                        <span>Express.js</span><span>Axios</span><span>REST API</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 5: Simon Game (Minor) -->
+            <div class="modern-card" data-category="minor" data-aos="fade-up" data-aos-delay="200">
+                <div class="card-image-top">
+                    <span class="card-icon">🎮</span>
+                </div>
+                <div class="card-content">
+                    <div class="project-tag minor"><span class="tag-icon">◈</span> MINOR PROJECT</div>
+                    <h3>Simon-Game</h3>
+                    <p>A classic memory-based electronic game demonstrating core DOM manipulation, event handling, and logical sequencing.</p>
+                    <div class="tech-stack">
+                        <span>HTML</span><span>CSS</span><span>JavaScript</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
     </section>
+
+
+
 
     <!-- Live GitHub Stats -->
     <section id="live-stats" class="section" data-aos="fade-in">
