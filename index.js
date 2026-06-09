@@ -163,10 +163,15 @@ if (yearSpan) {
 
 
 
+    // ==========================================
+    // QUANTUM PARTICLE BACKGROUND (For 3 Sections)
+    // ==========================================
     if (typeof particlesJS !== 'undefined') {
-        particlesJS("particles-js", {
+        
+        // Particle ka design (Configuration) ek jagah save kar liya
+        const particleConfig = {
             "particles": {
-                "number": { "value": 80, "density": { "enable": true, "value_area": 800 } },
+                "number": { "value": 60, "density": { "enable": true, "value_area": 800 } },
                 "color": { "value": "#2563eb" }, /* Professional Blue Color */
                 "shape": { "type": "circle" },
                 "opacity": { "value": 0.5, "random": false },
@@ -174,13 +179,13 @@ if (yearSpan) {
                 "line_linked": {
                     "enable": true,
                     "distance": 150,
-                    "color": "#2563eb", /* Blue Connecting Lines */
-                    "opacity": 0.4,
+                    "color": "#2563eb",
+                    "opacity": 0.3,
                     "width": 1.2
                 },
                 "move": {
                     "enable": true,
-                    "speed": 2, /* Floating speed */
+                    "speed": 2,
                     "direction": "none",
                     "random": false,
                     "straight": false,
@@ -201,8 +206,76 @@ if (yearSpan) {
                 }
             },
             "retina_detect": true
+        };
+
+        // Teeno sections par same design apply karna
+        if(document.getElementById('particles-js')) particlesJS("particles-js", particleConfig);
+        if(document.getElementById('particles-skills')) particlesJS("particles-skills", particleConfig);
+        if(document.getElementById('particles-projects')) particlesJS("particles-projects", particleConfig);
+    }
+
+
+
+
+
+
+    // ==========================================
+    // 1. MAGIC TRAILING CURSOR
+    // ==========================================
+    const cursorDot = document.querySelector("[data-cursor-dot]");
+    const cursorOutline = document.querySelector("[data-cursor-outline]");
+
+    if(cursorDot && cursorOutline) {
+        window.addEventListener("mousemove", function (e) {
+            const posX = e.clientX;
+            const posY = e.clientY;
+
+            // Dot mouse ke bilkul sath chalega
+            cursorDot.style.left = `${posX}px`;
+            cursorDot.style.top = `${posY}px`;
+
+            // Outline thoda smooth delay (trailing) ke sath chalega
+            cursorOutline.animate({
+                left: `${posX}px`,
+                top: `${posY}px`
+            }, { duration: 500, fill: "forwards" });
+        });
+
+        // Jab mouse kisi button, link ya image par jaye to cursor bada ho jaye
+        const hoverElements = document.querySelectorAll("a, .btn, .about-image");
+        
+        hoverElements.forEach(element => {
+            element.addEventListener("mouseenter", () => {
+                cursorOutline.classList.add("hovered");
+            });
+            element.addEventListener("mouseleave", () => {
+                cursorOutline.classList.remove("hovered");
+            });
         });
     }
+
+
+
+
+    
+    const progressBar = document.getElementById('scroll-progress');
+
+    if (progressBar) {
+        window.addEventListener('scroll', () => {
+            // Total height jisko scroll kiya ja sakta hai
+            const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            
+            // Abhi hum kahan par hain
+            const scrollTop = document.documentElement.scrollTop;
+            
+            // Percentage calculate karna (0 se 100 ke beech)
+            const scrollPercentage = (scrollTop / scrollHeight) * 100;
+            
+            // Progress bar ki width ko update karna
+            progressBar.style.width = `${scrollPercentage}%`;
+        });
+    }
+
 
 
 });
