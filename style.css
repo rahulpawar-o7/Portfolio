@@ -1,4 +1,4 @@
-/* --- Global Styles & Variables --- */
+
 * {
     margin: 0;
     padding: 0;
@@ -10,8 +10,8 @@ html {
 }
 
 :root {
-    --primary-color: #0f172a; /* Dark Navy */
-    --accent-color: #2563eb;  /* Professional Blue */
+    --primary-color: #0f172a; 
+    --accent-color: #2563eb;  
     --text-color: #475569;
     --bg-light: #f1f5f9;
     --white: #ffffff;
@@ -212,9 +212,6 @@ body.hacker-mode .hero {
 
 
 
-
-
-
 /* --- About Section --- */
 .about-container {
     display: flex;
@@ -243,6 +240,9 @@ body.hacker-mode .hero {
 
 .about-text { flex: 2; }
 .about-text p { font-size: 1.1rem; margin-bottom: 20px; }
+
+
+
 
 /* --- Skills & Projects Grids --- */
 .skills-grid, .projects-grid {
@@ -282,6 +282,9 @@ body.hacker-mode .hero {
 .lnr { color: var(--accent-color); }
 .project-icon { font-size: 2rem; margin-bottom: 15px; display: block; text-align: center;}
 .project-card h3 { text-align: center; }
+
+
+
 
 /* --- Terminal Section --- */
 .terminal-window {
@@ -361,6 +364,9 @@ footer {
     background-color: var(--primary-color);
     color: #fff;
 }
+
+
+
 
 /* --- Responsive Adjustments --- */
 @media (max-width: 900px) {
@@ -445,7 +451,7 @@ body.hacker-mode .ticker-item .up {
     transform-style: preserve-3d; 
 }
 
-/* Hacker Mode ke liye Glass Effect */
+
 body.hacker-mode .project-card, 
 body.hacker-mode .skill-category, 
 body.hacker-mode .stat-box {
@@ -455,9 +461,9 @@ body.hacker-mode .stat-box {
     box-shadow: 0 8px 32px 0 rgba(0, 255, 0, 0.1);
 }
 
-/* 3D element ko card se bahar nikalne ka effect (Pop-out effect) */
+
 .project-card h3, .project-icon, .skill-item, .stat-box h3, .stat-box p, .stat-box span {
-    transform: translateZ(30px); /* Text ko thoda upar uthayega */
+    transform: translateZ(30px); 
 }
 
 
@@ -468,7 +474,7 @@ body.hacker-mode .stat-box {
     position: relative; 
 }
 
-/* Teeno particles ke divs ko ek sath style karna */
+
 #particles-js, #particles-skills, #particles-projects {
     position: absolute;
     width: 100%;
@@ -476,12 +482,12 @@ body.hacker-mode .stat-box {
     top: 0;
     left: 0;
     z-index: 0;
-    pointer-events: none; /* IMPORTANT: Isse particles cards ke click/hover ko block nahi karenge */
+    pointer-events: none; 
 }
 
 .hero-content, .skills-grid, .projects-grid, .ticker-wrap, .section-title, .section-subtitle {
     position: relative;
-    z-index: 2; /* Content ko particles ke aage rakhna */
+    z-index: 2;
 }
 
 
@@ -493,19 +499,19 @@ body.hacker-mode .stat-box {
     top: 0;
     left: 0;
     width: 100%;
-    height: 4px; /* Bahut hi patli aur premium line */
+    height: 4px;
     background: transparent;
-    z-index: 10000; /* Sabse aage, Navbar ke bhi upar */
+    z-index: 10000; 
     pointer-events: none;
 }
 
 .scroll-progress-bar {
     height: 100%;
-    width: 0%; /* Shuru mein 0% hogi */
+    width: 0%; 
     background: var(--accent-color);
-    /* Neon glowing shadow */
+    
     box-shadow: 0 0 10px var(--accent-color), 0 0 20px var(--accent-color);
-    transition: width 0.1s ease-out; /* Smooth filling effect */
+    transition: width 0.1s ease-out; 
 }
 
 /* Hacker Mode ke liye Neon Green Glow */
@@ -515,12 +521,10 @@ body.hacker-mode .scroll-progress-bar {
 }
 
 
-/* ======================================================
-   --- PREMIUM PROJECTS SECTION (LIGHT THEME) ---
-========================================================= */
+
 
 .dark-showcase {
-    background-color: var(--bg-light); /* Light grey background matching Skills section */
+    background-color: var(--bg-light); 
     color: var(--text-color);
     padding-top: 100px;
     padding-bottom: 100px;
@@ -532,7 +536,7 @@ body.hacker-mode .scroll-progress-bar {
 }
 
 .sub-heading {
-    color: var(--accent-color); /* Professional Blue */
+    color: var(--accent-color);
     font-family: 'Space Grotesk', 'Poppins', sans-serif;
     font-size: 0.85rem;
     letter-spacing: 3px;
@@ -543,13 +547,13 @@ body.hacker-mode .scroll-progress-bar {
 
 .premium-title {
     font-size: 3.5rem;
-    color: var(--primary-color); /* Dark Navy text */
+    color: var(--primary-color); 
     font-weight: 700;
 }
 
 .highlight-text {
-    color: var(--accent-color); /* Blue Highlight */
-    text-shadow: none; /* Removed neon shadow for clean look */
+    color: var(--accent-color); 
+    text-shadow: none; 
 }
 
 /* --- Filter Buttons --- */
@@ -563,7 +567,7 @@ body.hacker-mode .scroll-progress-bar {
 
 .filter-btn {
     background: transparent;
-    border: 1px solid rgba(0, 0, 0, 0.15); /* Light border */
+    border: 1px solid rgba(0, 0, 0, 0.15); 
     color: var(--text-color);
     padding: 10px 25px;
     border-radius: 30px;
@@ -582,7 +586,7 @@ body.hacker-mode .scroll-progress-bar {
     background: var(--accent-color);
     color: var(--white);
     border: none;
-    box-shadow: 0 5px 15px rgba(37, 99, 235, 0.3); /* Soft blue shadow */
+    box-shadow: 0 5px 15px rgba(37, 99, 235, 0.3); 
 }
 
 /* --- Modern Project Cards Grid (Light Version) --- */
@@ -597,24 +601,24 @@ body.hacker-mode .scroll-progress-bar {
 
 
  .modern-card {
-    background: var(--white); /* White card background */
+    background: var(--white); 
     border: 1px solid rgba(0, 0, 0, 0.05);
     border-radius: 20px;
     overflow: hidden;
     transition: transform 0.4s ease, box-shadow 0.4s ease;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05); /* Clean light shadow  */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05); 
 }
 
 .modern-card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1); /* Slightly deeper shadow on hover */
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1); 
     border-color: rgba(0, 0, 0, 0.1);
 }
 
 /* Card Image Area (Top) */
 .card-image-top {
     height: 220px;
-    background: #e2e8f0; /* Very light grey/blue for the image header */
+    background: #e2e8f0; 
     display: flex;
     align-items: center;
     justify-content: center;
@@ -628,7 +632,7 @@ body.hacker-mode .scroll-progress-bar {
 }
 
 .modern-card:hover .card-icon {
-    transform: scale(1.1); /* Icon zoom on hover */
+    transform: scale(1.1); 
 }
 
 /* Card Content Area (Bottom) */
@@ -653,7 +657,7 @@ body.hacker-mode .scroll-progress-bar {
 }
 
 .project-tag.minor {
-    color: #f43f5e; /* Pink tag for variety */
+    color: #f43f5e; 
 }
 
 .modern-card h3 {
@@ -679,7 +683,7 @@ body.hacker-mode .scroll-progress-bar {
 }
 
 .tech-stack span {
-    background: var(--bg-light); /* Light grey pill */
+    background: var(--bg-light); 
     color: var(--primary-color);
     padding: 8px 16px;
     border-radius: 8px;
@@ -690,7 +694,7 @@ body.hacker-mode .scroll-progress-bar {
 }
 
 .tech-stack span:hover {
-    background: rgba(37, 99, 235, 0.1); /* Light blue tint on hover */
+    background: rgba(37, 99, 235, 0.1); 
     color: var(--accent-color);
     border-color: rgba(37, 99, 235, 0.2);
 }
@@ -698,38 +702,38 @@ body.hacker-mode .scroll-progress-bar {
 
 /* --- Mobile Responsive Fixes --- */
 @media (max-width: 768px) {
-    /* Section ki spacing kam karna */
+   
     .section {
         padding: 80px 5%; 
     }
     
-    /* Titles ko mobile ke hisab se chhota karna */
+    
     .section-title {
         font-size: 2.2rem;
     }
 
-    /* Cards ko ek ke niche ek (Vertical) stack karna */
+   
     .projects-grid, 
     .skills-grid, 
     .stats-container {
-        grid-template-columns: 1fr; /* Har row mein sirf 1 item */
+        grid-template-columns: 1fr; 
         gap: 20px;
     }
 
-    /* Cards ki internal padding thodi kam karna */
+    
     .project-card, 
     .skill-category, 
     .stat-box {
         padding: 25px 20px;
     }
 
-    /* Terminal ko mobile screen par fit karna */
+    
     .terminal-window {
         width: 100%;
         margin: 20px auto 0;
     }
     .terminal-body {
-        font-size: 0.95rem; /* Font thoda chhota */
+        font-size: 0.95rem;
         padding: 15px;
     }
 }
@@ -742,8 +746,8 @@ body.hacker-mode .hero h1 {
 
 body.hacker-mode .hero h1:hover {
     animation: glitch-anim 0.3s linear infinite;
-    color: #fff; /* Hover par white ho jayega */
-    text-shadow: 4px 0 #b33b95, -4px 0 #00fff9; /* Red aur Blue glitch shadow */
+    color: #fff; 
+    text-shadow: 4px 0 #b33b95, -4px 0 #00fff9; 
     cursor: crosshair;
 }
 
@@ -759,11 +763,6 @@ body.hacker-mode .hero h1:hover {
 
 
 
-
-
-
-/* --- 1. Magic Trailing Cursor --- */
-/* Default mouse pointer ko chupa dena */
 * {
     cursor: none !important; 
 }
@@ -771,14 +770,14 @@ body.hacker-mode .hero h1:hover {
 .cursor-dot {
     width: 8px;
     height: 8px;
-    background-color: var(--accent-color); /* Professional Blue */
+    background-color: var(--accent-color); 
     position: fixed;
     top: 0;
     left: 0;
     transform: translate(-50%, -50%);
     border-radius: 50%;
-    z-index: 9999; /* Sabse aage rakhne ke liye */
-    pointer-events: none; /* Taaki click iske aar-paar ja sake */
+    z-index: 9999; 
+    pointer-events: none; 
 }
 
 .cursor-outline {
@@ -795,14 +794,14 @@ body.hacker-mode .hero h1:hover {
     transition: width 0.2s, height 0.2s;
 }
 
-/* Jab mouse kisi link ya button par ho (Bada ho jayega) */
+
+
 .cursor-outline.hovered {
     width: 60px;
     height: 60px;
-    background-color: rgba(37, 99, 235, 0.1); /* Halka blue fill */
+    background-color: rgba(37, 99, 235, 0.1);
 }
 
-/* Hacker Mode ke liye Cursor */
 body.hacker-mode .cursor-dot {
     background-color: #00ff00;
 }
@@ -816,18 +815,16 @@ body.hacker-mode .cursor-outline.hovered {
 
 
 
-/* ======================================================
-   --- HACKER MODE OVERRIDES FOR PROJECTS SECTION ---
-========================================================= */
 
-/* Section background & border in Hacker Mode */
+
+
 body.hacker-mode .dark-showcase {
     background-color: #000000;
     border-top: 1px dashed #00ff00;
     border-bottom: 1px dashed #00ff00;
 }
 
-/* Headings turn neon green */
+
 body.hacker-mode .sub-heading,
 body.hacker-mode .premium-title,
 body.hacker-mode .highlight-text {
@@ -836,7 +833,7 @@ body.hacker-mode .highlight-text {
     font-family: 'Courier New', Courier, monospace;
 }
 
-/* Filter buttons get hacker styling */
+
 body.hacker-mode .filter-btn {
     color: #00ff00;
     border-color: #00ff00;
@@ -851,7 +848,7 @@ body.hacker-mode .filter-btn.active {
     box-shadow: 0 0 15px #00ff00;
 }
 
-/* Project Cards turn to terminal boxes */
+
 body.hacker-mode .modern-card {
     background: #050505;
     border: 1px solid #00ff00;
@@ -863,7 +860,7 @@ body.hacker-mode .modern-card:hover {
     border-color: #00ff00;
 }
 
-/* Card top area */
+
 body.hacker-mode .card-image-top {
     background: #000000;
     border-bottom: 1px dashed #00ff00;
@@ -873,7 +870,7 @@ body.hacker-mode .card-icon {
     filter: drop-shadow(0 0 15px #00ff00) grayscale(100%) sepia(100%) hue-rotate(80deg);
 }
 
-/* Text inside cards */
+
 body.hacker-mode .project-tag,
 body.hacker-mode .project-tag.minor,
 body.hacker-mode .modern-card h3,
@@ -883,7 +880,7 @@ body.hacker-mode .modern-card p {
     text-shadow: none;
 }
 
-/* Tech stack pills */
+
 body.hacker-mode .tech-stack span {
     background: transparent;
     color: #00ff00;
@@ -900,14 +897,11 @@ body.hacker-mode .tech-stack span:hover {
 
 
 
-/* ======================================================
-   --- MOBILE RESPONSIVE DESIGN (FIXES) ---
-========================================================= */
 
 @media screen and (max-width: 768px) {
-    /* 1. Global Section Padding Fix */
+
     .section {
-        padding: 80px 5%; /* Horizontal padding 10% se kam karke 5% kar di */
+        padding: 80px 5%; 
     }
 
     .dark-showcase {
@@ -915,9 +909,9 @@ body.hacker-mode .tech-stack span:hover {
         padding-bottom: 60px;
     }
 
-    /* 2. Headings & Text Resize */
+    
     .premium-title {
-        font-size: 2.2rem; /* Title thoda chhota kiya */
+        font-size: 2.2rem; 
     }
     
     .section-title {
@@ -928,27 +922,27 @@ body.hacker-mode .tech-stack span:hover {
         font-size: 0.75rem;
     }
 
-    /* 3. Project Grid Fix (Most Important) */
+    
     .modern-projects-grid {
-        /* Mobile par hume sirf 1 column chahiye taaki cards fit aayen */
+       
         grid-template-columns: 1fr; 
         gap: 30px;
     }
 
-    /* 4. Card Internal Adjustments */
+   
     .card-content {
-        padding: 25px 20px; /* Andar ka space thoda kam kiya */
+        padding: 25px 20px; 
     }
 
     .card-image-top {
-        height: 180px; /* Image area thoda chhota kiya */
+        height: 180px; 
     }
 
     .card-icon {
         font-size: 4rem;
     }
 
-    /* 5. Filter Buttons Stack Fix */
+  
     .project-filters {
         gap: 10px;
         margin-bottom: 40px;
@@ -959,7 +953,7 @@ body.hacker-mode .tech-stack span:hover {
         font-size: 0.9rem;
     }
 
-    /* 6. Hero Section Fixes for Mobile */
+   
     .hero h1 {
         font-size: 3rem;
     }
@@ -969,7 +963,7 @@ body.hacker-mode .tech-stack span:hover {
     }
 }
 
-/* For very small devices like iPhone SE (max 380px) */
+
 @media screen and (max-width: 380px) {
     .premium-title {
         font-size: 1.8rem;
