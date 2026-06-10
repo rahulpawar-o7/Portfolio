@@ -594,13 +594,15 @@ body.hacker-mode .scroll-progress-bar {
     margin: 0 auto;
 }
 
-.modern-card {
+
+
+ .modern-card {
     background: var(--white); /* White card background */
     border: 1px solid rgba(0, 0, 0, 0.05);
     border-radius: 20px;
     overflow: hidden;
     transition: transform 0.4s ease, box-shadow 0.4s ease;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05); /* Clean light shadow */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05); /* Clean light shadow  */
 }
 
 .modern-card:hover {
@@ -632,7 +634,10 @@ body.hacker-mode .scroll-progress-bar {
 /* Card Content Area (Bottom) */
 .card-content {
     padding: 35px 30px;
-}
+} 
+
+
+
 
 /* Major/Minor Tags */
 .project-tag {
@@ -889,4 +894,11 @@ body.hacker-mode .tech-stack span:hover {
     background: #00ff00;
     color: #000000;
 }
+
+
+
+
+
+
+
 
