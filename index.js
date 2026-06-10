@@ -1,6 +1,37 @@
 
 document.addEventListener("DOMContentLoaded", () => {
 
+
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const projectCards = document.querySelectorAll('.modern-card');
+
+    filterButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            // Pehle sabhi buttons se 'active' class hatao
+            filterButtons.forEach(btn => btn.classList.remove('active'));
+            // Jis button par click hua hai, us par 'active' lagao
+            button.classList.add('active');
+
+            // Button ka filter value nikalo (all, major, ya minor)
+            const filterValue = button.getAttribute('data-filter');
+
+            // Sabhi cards ko check karo
+            projectCards.forEach(card => {
+                const cardCategory = card.getAttribute('data-category');
+                
+                if (filterValue === 'all' || filterValue === cardCategory) {
+                    card.style.display = 'block';
+                    // Halki si animation dikhane ke liye
+                    card.style.animation = 'fadeInUp 0.5s ease forwards';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        });
+    });
+
+
+
     const profileImg = document.getElementById('profile-img');
     let clickCount = 0;
     
@@ -213,6 +244,7 @@ if (yearSpan) {
         if(document.getElementById('particles-skills')) particlesJS("particles-skills", particleConfig);
         if(document.getElementById('particles-projects')) particlesJS("particles-projects", particleConfig);
     }
+
 
 
 
