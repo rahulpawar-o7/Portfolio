@@ -900,5 +900,84 @@ body.hacker-mode .tech-stack span:hover {
 
 
 
+/* ======================================================
+   --- MOBILE RESPONSIVE DESIGN (FIXES) ---
+========================================================= */
 
+@media screen and (max-width: 768px) {
+    /* 1. Global Section Padding Fix */
+    .section {
+        padding: 80px 5%; /* Horizontal padding 10% se kam karke 5% kar di */
+    }
+
+    .dark-showcase {
+        padding-top: 60px;
+        padding-bottom: 60px;
+    }
+
+    /* 2. Headings & Text Resize */
+    .premium-title {
+        font-size: 2.2rem; /* Title thoda chhota kiya */
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .sub-heading {
+        font-size: 0.75rem;
+    }
+
+    /* 3. Project Grid Fix (Most Important) */
+    .modern-projects-grid {
+        /* Mobile par hume sirf 1 column chahiye taaki cards fit aayen */
+        grid-template-columns: 1fr; 
+        gap: 30px;
+    }
+
+    /* 4. Card Internal Adjustments */
+    .card-content {
+        padding: 25px 20px; /* Andar ka space thoda kam kiya */
+    }
+
+    .card-image-top {
+        height: 180px; /* Image area thoda chhota kiya */
+    }
+
+    .card-icon {
+        font-size: 4rem;
+    }
+
+    /* 5. Filter Buttons Stack Fix */
+    .project-filters {
+        gap: 10px;
+        margin-bottom: 40px;
+    }
+
+    .filter-btn {
+        padding: 8px 18px;
+        font-size: 0.9rem;
+    }
+
+    /* 6. Hero Section Fixes for Mobile */
+    .hero h1 {
+        font-size: 3rem;
+    }
+    
+    .hero p {
+        font-size: 1rem;
+    }
+}
+
+/* For very small devices like iPhone SE (max 380px) */
+@media screen and (max-width: 380px) {
+    .premium-title {
+        font-size: 1.8rem;
+    }
+    
+    .filter-btn {
+        padding: 6px 12px;
+        font-size: 0.85rem;
+    }
+}
 
