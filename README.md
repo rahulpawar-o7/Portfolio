@@ -143,10 +143,14 @@ cd your-portfolio-repo
 ## 📸 Screenshots
 
 <!-- Add images to the screenshots/ folder and update paths below -->
+## HOME SECTION
 ![Home Section](./screenshots/home.png)
+## PROJECTS SECTION
 ![Projects Section](./screenshots/projects.png)
+## SKILLS SECTION
 ![Skills Section](./screenshots/skills.png)
-![Hacker Mode](./screenshots/skills.png)
+## HACKER MODE
+![Hacker Mode](./screenshots/hackr.png)
 
 ---
 
