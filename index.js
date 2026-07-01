@@ -7,21 +7,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
     filterButtons.forEach(button => {
         button.addEventListener('click', () => {
-            // Pehle sabhi buttons se 'active' class hatao
-            filterButtons.forEach(btn => btn.classList.remove('active'));
-            // Jis button par click hua hai, us par 'active' lagao
+            
+            filterButtons.forEach(btn => btn.classList.remove('active'));    
             button.classList.add('active');
-
-            // Button ka filter value nikalo (all, major, ya minor)
             const filterValue = button.getAttribute('data-filter');
 
-            // Sabhi cards ko check karo
+           
             projectCards.forEach(card => {
                 const cardCategory = card.getAttribute('data-category');
                 
                 if (filterValue === 'all' || filterValue === cardCategory) {
                     card.style.display = 'block';
-                    // Halki si animation dikhane ke liye
                     card.style.animation = 'fadeInUp 0.5s ease forwards';
                 } else {
                     card.style.display = 'none';
@@ -63,7 +59,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const terminalBody = document.getElementById('terminal-body');
     let index = 0;
 
-    // A. Automatic Typing Function
+    
     function typeTerminal() {
         if(index < textToType.length) {
             if(textToType.charAt(index) === '\n') {
@@ -193,13 +189,9 @@ if (yearSpan) {
     }
 
 
-
-    // ==========================================
-    // QUANTUM PARTICLE BACKGROUND (For 3 Sections)
-    // ==========================================
     if (typeof particlesJS !== 'undefined') {
         
-        // Particle ka design (Configuration) ek jagah save kar liya
+    
         const particleConfig = {
             "particles": {
                 "number": { "value": 60, "density": { "enable": true, "value_area": 800 } },
@@ -248,12 +240,6 @@ if (yearSpan) {
 
 
 
-
-
-
-    // ==========================================
-    // 1. MAGIC TRAILING CURSOR
-    // ==========================================
     const cursorDot = document.querySelector("[data-cursor-dot]");
     const cursorOutline = document.querySelector("[data-cursor-outline]");
 
@@ -262,18 +248,16 @@ if (yearSpan) {
             const posX = e.clientX;
             const posY = e.clientY;
 
-            // Dot mouse ke bilkul sath chalega
             cursorDot.style.left = `${posX}px`;
             cursorDot.style.top = `${posY}px`;
-
-            // Outline thoda smooth delay (trailing) ke sath chalega
+           
             cursorOutline.animate({
                 left: `${posX}px`,
                 top: `${posY}px`
             }, { duration: 500, fill: "forwards" });
         });
 
-        // Jab mouse kisi button, link ya image par jaye to cursor bada ho jaye
+       
         const hoverElements = document.querySelectorAll("a, .btn, .about-image");
         
         hoverElements.forEach(element => {
@@ -294,16 +278,11 @@ if (yearSpan) {
 
     if (progressBar) {
         window.addEventListener('scroll', () => {
-            // Total height jisko scroll kiya ja sakta hai
             const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-            
-            // Abhi hum kahan par hain
             const scrollTop = document.documentElement.scrollTop;
-            
-            // Percentage calculate karna (0 se 100 ke beech)
+ 
             const scrollPercentage = (scrollTop / scrollHeight) * 100;
-            
-            // Progress bar ki width ko update karna
+ 
             progressBar.style.width = `${scrollPercentage}%`;
         });
     }
